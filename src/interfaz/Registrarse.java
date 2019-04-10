@@ -28,18 +28,6 @@ public class Registrarse extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Registrarse frame = new Registrarse();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -115,10 +103,8 @@ public class Registrarse extends JFrame {
 					panel.add(textPane);
 				}else {
 					try {
-						dispose();
-						login o=new login();
-						o.setVisible(true);
-						entra=Entrar_Usuario.Usuario(textPane_1.getText(),passwordField.getText());
+						Entrar_Usuario usuario=new Entrar_Usuario();
+						entra=usuario.Usuario(textPane_1.getText(),passwordField.getText(),textPane_4.getText());
 						} catch (SQLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -141,6 +127,17 @@ public class Registrarse extends JFrame {
 		});
 		btnRegistrarse.setBounds(113, 174, 198, 23);
 		panel.add(btnRegistrarse);
+		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				login o = new login();
+				o.setVisible(true);
+				dispose();
+			}
+		});
+		btnVolver.setBounds(113, 206, 198, 23);
+		panel.add(btnVolver);
 		
 	}
 }

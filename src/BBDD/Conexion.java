@@ -33,9 +33,7 @@ public class Conexion {
 		public static ResultSet EjecutarSetencia(String sentencia,String tabla) {
 			try {
 				resultado = consulta.executeQuery(sentencia);
-				while(resultado.next()) {
-					System.out.println(resultado.getString(tabla));
-				}
+				
 			} catch (SQLException e) {
 				System.out.println("error");
 				e.printStackTrace();
