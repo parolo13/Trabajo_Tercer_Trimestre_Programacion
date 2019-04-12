@@ -5,10 +5,11 @@ import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import programacion.Entrar_Usuario;
+import programacion.Registro;
 
 import javax.swing.JTextPane;
 import javax.swing.JPasswordField;
@@ -103,7 +104,7 @@ public class Registrarse extends JFrame {
 					panel.add(textPane);
 				}else {
 					try {
-						Entrar_Usuario usuario=new Entrar_Usuario();
+						Registro usuario=new Registro();
 						entra=usuario.Usuario(textPane_1.getText(),passwordField.getText(),textPane_4.getText());
 						} catch (SQLException e1) {
 						// TODO Auto-generated catch block
@@ -118,8 +119,14 @@ public class Registrarse extends JFrame {
 						textPane.setBounds(256, 108, 158, 48);
 						panel.add(textPane);
 					}else {
-						
-						
+						JTextPane textPane = new JTextPane();
+						textPane.setText("ERROR");
+						textPane.setForeground(Color.RED);
+						textPane.setEditable(false);
+						textPane.setBackground(SystemColor.menu);
+						textPane.setBounds(256, 108, 158, 48);
+						panel.add(textPane);
+
 					}
 					
 				}

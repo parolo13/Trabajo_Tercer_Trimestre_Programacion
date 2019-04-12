@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import BBDD.EntrarBBDD;
-
+import BBDD.UsuarioBBDD;
+import programacion.*;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -20,7 +20,7 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import interfaz.Crear_Todo;
-import programacion.Entrar_Usuario;
+import programacion.Registro;
 
 import javax.swing.JSeparator;
 import java.awt.SystemColor;
@@ -40,7 +40,6 @@ public class login extends JFrame {
 	 */
 	public login() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		setBounds(100, 100, 570, 421);
 		  int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
@@ -78,21 +77,26 @@ public class login extends JFrame {
 		JButton btnIniciarSesion = new JButton("Entrar");
 		btnIniciarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (textField.getText().equals("q") && passwordField.getText().equals("q")) {
-					System.out.println("Entraste");
-					Crear_Todo o=new Crear_Todo();
-					dispose();
-					o.setVisible(true);
-					
-				}else {
-					
-					JTextPane txtpnError = new JTextPane();
-					txtpnError.setEditable(false);
-					txtpnError.setForeground(Color.RED);
-					txtpnError.setBackground(UIManager.getColor("Button.background"));
-					txtpnError.setText("ERROR");
-					txtpnError.setBounds(377, 78, 62, 20);
-					contentPane.add(txtpnError);	
+				try {
+					if (loginBBDD.Login(textField.getText() , passwordField.getText())) {
+						System.out.println("Entraste");
+						Crear_Todo o=new Crear_Todo();
+						dispose();
+						o.setVisible(true);
+						
+					}else {
+						
+						JTextPane txtpnError = new JTextPane();
+						txtpnError.setEditable(false);
+						txtpnError.setForeground(Color.RED);
+						txtpnError.setBackground(UIManager.getColor("Button.background"));
+						txtpnError.setText("ERROR");
+						txtpnError.setBounds(377, 78, 62, 20);
+						contentPane.add(txtpnError);	
+					}
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 			}
 		});
@@ -110,7 +114,7 @@ public class login extends JFrame {
 		txtpnSiNoEsta.setEditable(false);
 		txtpnSiNoEsta.setBackground(UIManager.getColor("Button.background"));
 		txtpnSiNoEsta.setText("Si no esta registrado,registrese.");
-		txtpnSiNoEsta.setBounds(57, 164, 220, 20);
+		txtpnSiNoEsta.setBounds(57, 164, 195, 20);
 		contentPane.add(txtpnSiNoEsta);
 		
 		JButton btnRegistrarse = new JButton("Registrarse");
@@ -128,6 +132,9 @@ public class login extends JFrame {
 		JButton btnNewButton = new JButton("Si se le ha olvidado la contrase\u00F1a, pulse aqu\u00ED");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ContraseñaOlvidada o=new ContraseñaOlvidada();
+				dispose();
+				o.setVisible(true);
 			}
 		});
 		btnNewButton.setForeground(new Color(0, 0, 128));
