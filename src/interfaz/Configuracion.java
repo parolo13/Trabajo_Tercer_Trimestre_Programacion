@@ -7,13 +7,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-
+import programacion.CambioDeContraseña;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Ver_Todo extends JFrame {
+public class Configuracion extends JFrame {
 
 	private JPanel contentPane;
 
@@ -21,13 +21,12 @@ public class Ver_Todo extends JFrame {
 	 * Launch the application.
 	 */
 	
-
 	/**
 	 * Create the frame.
 	 */
-	public Ver_Todo(String usuario) {
+	public Configuracion(String usuario) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 451, 300);
+		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -37,29 +36,38 @@ public class Ver_Todo extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Ver Jugadores");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnCambiarNombreDe = new JButton("Cambiar nombre de usuario");
+		btnCambiarNombreDe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CambiarUsuario o=new CambiarUsuario(usuario);
+				dispose();
+				o.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(127, 35, 157, 23);
-		panel.add(btnNewButton);
+		btnCambiarNombreDe.setBounds(10, 11, 404, 23);
+		panel.add(btnCambiarNombreDe);
 		
-		JButton button = new JButton("Ver Equipos");
-		button.addActionListener(new ActionListener() {
+		JButton btnCambiarContrasea = new JButton("Cambiar contrase\u00F1a");
+		btnCambiarContrasea.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CambiarContraseña o=new CambiarContraseña(usuario);
+				dispose();
+				o.setVisible(true);
 			}
 		});
-		button.setBounds(127, 88, 157, 23);
-		panel.add(button);
+		btnCambiarContrasea.setBounds(10, 61, 404, 23);
+		panel.add(btnCambiarContrasea);
 		
-		JButton button_1 = new JButton("Ver Ligas");
-		button_1.addActionListener(new ActionListener() {
+		JButton btnCambiarDireccionDe = new JButton("Cambiar direccion de correo");
+		btnCambiarDireccionDe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CambiarCorreo o=new CambiarCorreo(usuario);
+				dispose();
+				o.setVisible(true);
 			}
 		});
-		button_1.setBounds(127, 145, 157, 23);
-		panel.add(button_1);
+		btnCambiarDireccionDe.setBounds(10, 116, 404, 23);
+		panel.add(btnCambiarDireccionDe);
 		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
@@ -69,7 +77,7 @@ public class Ver_Todo extends JFrame {
 				o.setVisible(true);
 			}
 		});
-		btnVolver.setBounds(127, 196, 157, 23);
+		btnVolver.setBounds(10, 176, 404, 23);
 		panel.add(btnVolver);
 	}
 

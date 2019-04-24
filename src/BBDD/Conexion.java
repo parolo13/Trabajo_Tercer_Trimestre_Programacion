@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class Conexion {
 	
 		static String timeZone="?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-		static String dbname="fm19";
+		static String dbname="fm";
 		static String url="jdbc:mysql://localhost:3307/"+dbname+timeZone;
 		static String user="root";
 		static String pass ="manolo";

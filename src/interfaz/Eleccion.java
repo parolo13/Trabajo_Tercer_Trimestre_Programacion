@@ -11,6 +11,8 @@ import javax.swing.UIManager;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+
 
 public class Eleccion extends JFrame {
 
@@ -24,8 +26,8 @@ public class Eleccion extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Eleccion() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public Eleccion(String usuario) {
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -46,34 +48,78 @@ public class Eleccion extends JFrame {
 		JButton btnNewButton = new JButton("Ver");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Ver_Todo o =new Ver_Todo(usuario);
+				dispose();
+				o.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(152, 42, 89, 23);
+		btnNewButton.setBounds(41, 42, 89, 23);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Editar\r\n");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Editar_Todo o=new Editar_Todo(usuario);
+				dispose();
+				o.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(152, 87, 89, 23);
+		btnNewButton_1.setBounds(283, 42, 89, 23);
 		panel.add(btnNewButton_1);
 		
 		JButton button = new JButton("Añadir");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Crear_Todo o=new Crear_Todo(usuario);
+				dispose();
+				o.setVisible(true);
 			}
 		});
-		button.setBounds(152, 133, 89, 23);
+		button.setBounds(41, 106, 89, 23);
 		panel.add(button);
 		
 		JButton btnBorrar = new JButton("Borrar");
 		btnBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Borrar_Todo o=new Borrar_Todo(usuario);
+				dispose();
+				o.setVisible(true);
 			}
 		});
-		btnBorrar.setBounds(152, 182, 89, 23);
+		btnBorrar.setBounds(283, 106, 89, 23);
 		panel.add(btnBorrar);
+		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				login o=new login();
+				dispose();
+				o.setVisible(true);
+			}
+		});
+		btnVolver.setBounds(41, 176, 138, 23);
+		panel.add(btnVolver);
+		
+		JButton btnConfiguracion = new JButton("Configuracion");
+		btnConfiguracion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Configuracion o=new Configuracion(usuario);
+				dispose();
+				o.setVisible(true);
+			}
+		});
+		btnConfiguracion.setBounds(234, 176, 138, 23);
+		panel.add(btnConfiguracion);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.addItem("Sebas eres...");
+		comboBox.addItem("cojo :v");
+		comboBox.setBounds(144, 129, 121, 22);
+		panel.add(comboBox);
+		
+		String itemSeleecionado=(String)comboBox.getSelectedItem();
+		System.out.println(itemSeleecionado);
+		
 	}
 
 }

@@ -27,7 +27,7 @@ public class Crear_Todo extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Crear_Todo() {
+	public Crear_Todo(String usuario) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -47,7 +47,7 @@ public class Crear_Todo extends JFrame {
 				o.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(10, 46, 404, 23);
+		btnNewButton.setBounds(10, 23, 404, 23);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_2 = new JButton("Crear Liga");
@@ -55,7 +55,7 @@ public class Crear_Todo extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_2.setBounds(10, 112, 404, 23);
+		btnNewButton_2.setBounds(10, 90, 404, 23);
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton_4 = new JButton("Crear Equipos");
@@ -63,7 +63,18 @@ public class Crear_Todo extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_4.setBounds(10, 185, 404, 23);
+		btnNewButton_4.setBounds(10, 160, 404, 23);
 		panel.add(btnNewButton_4);
+		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Eleccion o = new Eleccion(usuario);
+				dispose();
+				o.setVisible(true);
+			}
+		});
+		btnVolver.setBounds(10, 217, 404, 23);
+		panel.add(btnVolver);
 	}
 }

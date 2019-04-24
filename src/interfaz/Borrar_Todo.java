@@ -21,7 +21,7 @@ public class Borrar_Todo extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Borrar_Todo() {
+	public Borrar_Todo(String usuario) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -34,7 +34,7 @@ public class Borrar_Todo extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button.setBounds(85, 55, 241, 23);
+		button.setBounds(85, 27, 241, 23);
 		contentPane.add(button);
 		
 		JButton button_1 = new JButton("Borrar Equipos");
@@ -42,7 +42,7 @@ public class Borrar_Todo extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_1.setBounds(85, 118, 241, 23);
+		button_1.setBounds(85, 94, 241, 23);
 		contentPane.add(button_1);
 		
 		JButton button_2 = new JButton("Borrar Ligas");
@@ -50,8 +50,18 @@ public class Borrar_Todo extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_2.setBounds(85, 181, 241, 23);
+		button_2.setBounds(85, 158, 241, 23);
 		contentPane.add(button_2);
+		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Eleccion o=new Eleccion(usuario);
+				dispose();
+				o.setVisible(true);
+			}
+		});
+		btnVolver.setBounds(125, 213, 151, 23);
+		contentPane.add(btnVolver);
 	}
-
 }
