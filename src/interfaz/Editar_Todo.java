@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
 public class Editar_Todo extends JFrame {
@@ -37,6 +38,14 @@ public class Editar_Todo extends JFrame {
 		JButton btnEditarJugador = new JButton("Editar Jugador");
 		btnEditarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					Editar_Jugador o=new Editar_Jugador(usuario);
+					dispose();
+					o.setVisible(true);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnEditarJugador.setBounds(10, 11, 404, 23);

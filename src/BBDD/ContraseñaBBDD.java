@@ -8,7 +8,7 @@ public class ContraseñaBBDD {
 		int i=0;
 		int a=0;
 		ResultSet resultado;
-             resultado=Conexion.EjecutarSetencia("Select Clave from usuarios", "Usuario"); 
+             resultado=Conexion.EjecutarSetencia("Select Clave from usuarios"); 
              while (resultado.next()) {
  				a++;	
  			}

@@ -9,7 +9,7 @@ public class UsuarioBBDD {
 		int i=0;
 		int a=0;
 		ResultSet resultado;
-             resultado=Conexion.EjecutarSetencia("Select Usuario from usuarios", "Usuario");
+             resultado=Conexion.EjecutarSetencia("Select Usuario from usuarios");
              while (resultado.next()) {
 				a++;	
 			}

@@ -108,18 +108,8 @@ public class Eleccion extends JFrame {
 				o.setVisible(true);
 			}
 		});
-		btnConfiguracion.setBounds(234, 176, 138, 23);
+		btnConfiguracion.setBounds(214, 176, 158, 23);
 		panel.add(btnConfiguracion);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.addItem("Sebas eres...");
-		comboBox.addItem("cojo :v");
-		comboBox.setBounds(144, 129, 121, 22);
-		panel.add(comboBox);
-		
-		String itemSeleecionado=(String)comboBox.getSelectedItem();
-		System.out.println(itemSeleecionado);
-		
 	}
 
 }

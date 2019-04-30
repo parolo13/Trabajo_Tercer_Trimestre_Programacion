@@ -11,6 +11,7 @@ import javax.swing.JTextPane;
 import javax.swing.UIManager;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
 import interfaz.Crear_Jugador;
@@ -42,9 +43,15 @@ public class Crear_Todo extends JFrame {
 		JButton btnNewButton = new JButton("Crear Jugadores\r\n");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Crear_Jugador o=new Crear_Jugador();
-				dispose();
-				o.setVisible(true);
+				Crear_Jugador o;
+				try {
+					o = new Crear_Jugador(usuario);
+					dispose();
+					o.setVisible(true);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnNewButton.setBounds(10, 23, 404, 23);
@@ -53,17 +60,35 @@ public class Crear_Todo extends JFrame {
 		JButton btnNewButton_2 = new JButton("Crear Liga");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					Crear_Liga o=new Crear_Liga(usuario);
+					dispose();
+					o.setVisible(true);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
-		btnNewButton_2.setBounds(10, 90, 404, 23);
+		btnNewButton_2.setBounds(10, 158, 404, 23);
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton_4 = new JButton("Crear Equipos");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					Crear_Equipo o=new Crear_Equipo(usuario);
+					dispose();
+					o.setVisible(true);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
-		btnNewButton_4.setBounds(10, 160, 404, 23);
+		btnNewButton_4.setBounds(10, 94, 404, 23);
 		panel.add(btnNewButton_4);
 		
 		JButton btnVolver = new JButton("Volver");

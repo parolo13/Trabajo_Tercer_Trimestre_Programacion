@@ -118,6 +118,9 @@ public class Registrarse extends JFrame {
 						textPane.setBackground(SystemColor.menu);
 						textPane.setBounds(256, 108, 158, 48);
 						panel.add(textPane);
+						login o=new login();
+						dispose();
+						o.setVisible(true);
 					}else {
 						JTextPane textPane = new JTextPane();
 						textPane.setText("ERROR");

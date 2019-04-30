@@ -137,7 +137,7 @@ public class login extends JFrame {
 			}
 		});
 		btnNewButton.setForeground(new Color(0, 0, 128));
-		btnNewButton.setBackground(UIManager.getColor("Button.background"));
+		btnNewButton.setBackground(Color.LIGHT_GRAY);
 		btnNewButton.setBounds(59, 109, 317, 23);
 		contentPane.add(btnNewButton);
 
