@@ -2,6 +2,8 @@ package interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
 import javax.swing.JFrame;
@@ -14,10 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
-public class Editar_Jugador extends JFrame {
+public class editar_equipo extends JFrame {
 
 	private JPanel contentPane;
 
@@ -29,7 +29,7 @@ public class Editar_Jugador extends JFrame {
 	 * 
 	 * @throws SQLException
 	 */
-	public Editar_Jugador(String usuario) throws SQLException {
+	public editar_equipo(String usuario) throws SQLException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -41,42 +41,17 @@ public class Editar_Jugador extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("Jugador a editar");
-		lblNewLabel.setBounds(53, 82, 92, 14);
-		panel.add(lblNewLabel);
+		JLabel lblEdiarEquipo = new JLabel("Equipo a editar");
+		lblEdiarEquipo.setBounds(33, 98, 96, 14);
+		panel.add(lblEdiarEquipo);
 
-		JComboBox Jugador = new JComboBox();
-		Jugador.setBounds(166, 78, 120, 22);
-		String[] jugadorBBDD = Crear.jugador();
-		for (int i = 0; i < jugadorBBDD.length; i++) {
-			Jugador.addItem(jugadorBBDD[i]);
+		JComboBox Equipo = new JComboBox();
+		Equipo.setBounds(135, 94, 132, 22);
+		String[] EquipoBBDD = Crear.Equipo();
+		for (int i = 0; i < EquipoBBDD.length; i++) {
+			Equipo.addItem(EquipoBBDD[i]);
 		}
-		panel.add(Jugador);
-
-		JButton btnEditar = new JButton("Editar");
-		btnEditar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String jugador = (String) Jugador.getSelectedItem();
-				if (jugador == null) {
-					JOptionPane.showMessageDialog(null, "No se ha seleccionado ningun jugador", "ERROR",
-							JOptionPane.ERROR_MESSAGE);
-				} else {
-
-					siguiente_editar_jugador o;
-					try {
-
-						o = new siguiente_editar_jugador(usuario, jugador);
-						dispose();
-						o.setVisible(true);
-					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}
-			}
-		});
-		btnEditar.setBounds(231, 202, 89, 23);
-		panel.add(btnEditar);
+		panel.add(Equipo);
 
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
@@ -88,5 +63,29 @@ public class Editar_Jugador extends JFrame {
 		});
 		btnVolver.setBounds(102, 202, 89, 23);
 		panel.add(btnVolver);
+
+		JButton btnEditar = new JButton("Editar");
+		btnEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String equipo = (String) Equipo.getSelectedItem();
+
+				if (equipo == null) {
+					JOptionPane.showMessageDialog(null, "No se ha seleccionado ningun equipo", "ERROR",
+							JOptionPane.ERROR_MESSAGE);
+				} else {
+					try {
+						siguiente_editar_equipo o = new siguiente_editar_equipo(usuario, equipo);
+						dispose();
+						o.setVisible(true);
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
+		btnEditar.setBounds(222, 203, 89, 23);
+		panel.add(btnEditar);
 	}
+
 }

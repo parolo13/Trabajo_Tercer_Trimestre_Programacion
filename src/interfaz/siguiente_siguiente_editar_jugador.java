@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import programacion.Crear;
+import programacion.Editar_Jugador_BBDD;
 
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
@@ -87,9 +88,13 @@ public class siguiente_siguiente_editar_jugador extends JFrame {
 		JButton btnEditarJugador = new JButton("Editar jugador");
 		btnEditarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				int tecnica = (int) Tecnica.getSelectedItem();
+				int mental = (int) Mental.getSelectedItem();
+				int fisico = (int) Fisico.getSelectedItem();
+				String equipo = (String) Equipo.getSelectedItem();
 				try {
-					Editar_Jugador o=new Editar_Jugador(usuario);
+					Editar_Jugador_BBDD.jugador2(equipo, jugador, tecnica, mental, fisico);
+					Editar_Todo o=new Editar_Todo(usuario);
 					dispose();
 					o.setVisible(true);
 				} catch (SQLException e1) {

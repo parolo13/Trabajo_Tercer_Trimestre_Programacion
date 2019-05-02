@@ -54,6 +54,15 @@ public class Editar_Todo extends JFrame {
 		JButton btnEditarLiga = new JButton("Editar Equipo");
 		btnEditarLiga.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					editar_equipo o=new editar_equipo(usuario);
+					dispose();
+					o.setVisible(true);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 		btnEditarLiga.setBounds(10, 63, 404, 23);
@@ -62,6 +71,15 @@ public class Editar_Todo extends JFrame {
 		JButton button = new JButton("Editar Liga");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					Editar_Liga o=new Editar_Liga(usuario);
+					dispose();
+					o.setVisible(true);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 		button.setBounds(10, 116, 404, 23);
