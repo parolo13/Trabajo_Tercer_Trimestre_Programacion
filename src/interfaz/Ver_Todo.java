@@ -40,6 +40,9 @@ public class Ver_Todo extends JFrame {
 		JButton btnNewButton = new JButton("Ver Jugadores");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Ver_Jugadores o=new Ver_Jugadores(usuario);
+				dispose();
+				o.setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(127, 35, 157, 23);
@@ -48,6 +51,9 @@ public class Ver_Todo extends JFrame {
 		JButton button = new JButton("Ver Equipos");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Ver_Equipos o=new Ver_Equipos(usuario);
+				dispose();
+				o.setVisible(true);
 			}
 		});
 		button.setBounds(127, 88, 157, 23);
@@ -56,6 +62,9 @@ public class Ver_Todo extends JFrame {
 		JButton button_1 = new JButton("Ver Ligas");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Ver_Ligas o=new Ver_Ligas(usuario);
+				dispose();
+				o.setVisible(true);
 			}
 		});
 		button_1.setBounds(127, 145, 157, 23);

@@ -40,6 +40,7 @@ public class Conexion {
 			}
 			return resultado;
 		}
+		
 		public static void EjecutarUpdate(String sentencia) {
 				try {
 					consulta.executeUpdate(sentencia);

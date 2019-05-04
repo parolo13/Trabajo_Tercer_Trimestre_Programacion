@@ -20,6 +20,8 @@ import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 
+import Atxy2k.CustomTextField.RestrictedTextField;
+
 public class Crear_Equipo extends JFrame {
 
 	private JPanel contentPane;
@@ -70,6 +72,7 @@ public class Crear_Equipo extends JFrame {
 		Nombre.setBounds(77, 22, 105, 20);
 		panel.add(Nombre);
 		Nombre.setColumns(10);
+		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz  123456789-");
 
 		JComboBox Liga = new JComboBox();
 		Liga.setBounds(77, 64, 105, 22);

@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Atxy2k.CustomTextField.RestrictedTextField;
 import programacion.Crear;
 import programacion.Editar_Jugador_BBDD;
 
@@ -162,6 +163,7 @@ public class siguiente_editar_jugador extends JFrame {
 		Nombre.setBounds(113, 13, 86, 20);
 		panel.add(Nombre);
 		Nombre.setColumns(10);
+		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz -");
 
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {

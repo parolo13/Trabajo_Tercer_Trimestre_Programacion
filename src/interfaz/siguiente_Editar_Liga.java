@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import Atxy2k.CustomTextField.RestrictedTextField;
 import programacion.Crear;
 import programacion.Crear_Liga_BBDD;
 import programacion.Editar_Liga_BBDD;
@@ -58,6 +59,7 @@ public class siguiente_Editar_Liga extends JFrame {
 		Nombre.setBounds(103, 22, 86, 20);
 		panel.add(Nombre);
 		Nombre.setColumns(10);
+		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz  123456789-");
 		
 		JComboBox Pais = new JComboBox();
 		Pais.setBounds(103, 58, 86, 22);

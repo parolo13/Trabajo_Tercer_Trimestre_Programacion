@@ -24,6 +24,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import Atxy2k.CustomTextField.RestrictedTextField;
+
 public class siguiente_Crear_Jugador extends JFrame {
 
 	private JPanel contentPane;

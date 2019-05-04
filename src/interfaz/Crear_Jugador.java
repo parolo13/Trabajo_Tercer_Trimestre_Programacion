@@ -22,6 +22,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 
+import Atxy2k.CustomTextField.RestrictedTextField;
+
 public class Crear_Jugador extends JFrame {
 
 	private JPanel contentPane;
@@ -47,9 +49,11 @@ public class Crear_Jugador extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 
-		JTextPane Nombre = new JTextPane();
+		JTextField Nombre = new JTextField();
 		Nombre.setBounds(66, 25, 115, 20);
 		panel.add(Nombre);
+		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz -");
+		
 
 		JComboBox Liga = new JComboBox();
 		Liga.setBounds(274, 56, 140, 22);

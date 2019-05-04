@@ -19,6 +19,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import Atxy2k.CustomTextField.RestrictedTextField;
+
 public class Crear_Liga extends JFrame {
 
 	private JPanel contentPane;
@@ -60,6 +62,7 @@ public class Crear_Liga extends JFrame {
 		Nombre.setBounds(103, 22, 86, 20);
 		panel.add(Nombre);
 		Nombre.setColumns(10);
+		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz  123456789");
 		
 		JComboBox Pais = new JComboBox();
 		Pais.setBounds(103, 58, 86, 22);

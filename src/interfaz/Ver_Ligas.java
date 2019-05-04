@@ -2,23 +2,22 @@ package interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import BBDD.Conexion;
 
-import javax.swing.JTable;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-public class Ver_Jugadores extends JFrame {
+public class Ver_Ligas extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
@@ -30,9 +29,9 @@ public class Ver_Jugadores extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Ver_Jugadores(String usuario) {
+	public Ver_Ligas(String usuario) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 523, 594);
+		setBounds(100, 100, 643, 513);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -48,8 +47,7 @@ public class Ver_Jugadores extends JFrame {
 		panel.add(table);
 
 		Object[][] datos = new Object[0][0];
-		String[] titulo = { "Nombre", "Valoracion", "Pais", "Liga", "Equipo", "Edad", "Valor", "Posicion", "Dorsal",
-				"Calificacion" };
+		String[] titulo = { "Nombre", "Pais", "Division" };
 		DefaultTableModel modelo = new DefaultTableModel(datos, titulo);
 		table.setModel(modelo);
 		JScrollPane scroll = new JScrollPane(table);
@@ -72,10 +70,10 @@ public class Ver_Jugadores extends JFrame {
 
 		try {
 			ResultSet rs = Conexion.EjecutarSetencia(
-					"Select Nombre_Completo,Valoracion_Media,Pais,Liga,Equipo,Edad,Valor,Posicion,Dorsal,Calificacion_Media FROM jugadores");
+					"Select nombre,Pais,Division FROM liga");
 			while (rs.next()) {
-				Object[] fila = new Object[10];
-				for (int i = 0; i < 10; i++)
+				Object[] fila = new Object[3];
+				for (int i = 0; i < 3; i++)
 					fila[i] = rs.getObject(i + 1);
 				modelo.addRow(fila);
 			}
@@ -83,4 +81,5 @@ public class Ver_Jugadores extends JFrame {
 			System.out.println(e);
 		}
 	}
+
 }
