@@ -47,7 +47,7 @@ public class Borrar_Liga extends JFrame {
 		panel.add(lblLiga);
 
 		JComboBox Liga = new JComboBox();
-		Liga.setBounds(178, 101, 103, 22);
+		Liga.setBounds(178, 101, 129, 22);
 		String[] ligaBBDD = Crear.Liga();
 		for (int i = 0; i < ligaBBDD.length; i++) {
 			Liga.addItem(ligaBBDD[i]);

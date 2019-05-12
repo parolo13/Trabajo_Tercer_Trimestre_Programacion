@@ -55,9 +55,15 @@ public class Ver_Ligas extends JFrame {
 		btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Ver_Todo o=new Ver_Todo(usuario);
-				dispose();
-				o.setVisible(true);
+				if (usuario == null) {
+					sesion_no_iniciada o = new sesion_no_iniciada(usuario);
+					dispose();
+					o.setVisible(true);
+				} else {
+					Ver_Todo o = new Ver_Todo(usuario);
+					dispose();
+					o.setVisible(true);
+				}
 			}
 		});
 		btnVolver.setBounds(0, 0, 89, 23);

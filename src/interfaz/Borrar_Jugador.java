@@ -44,11 +44,11 @@ public class Borrar_Jugador extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblJugador = new JLabel("Jugador");
-		lblJugador.setBounds(86, 106, 46, 14);
+		lblJugador.setBounds(73, 106, 68, 14);
 		panel.add(lblJugador);
 		
 		JComboBox Jugador = new JComboBox();
-		Jugador.setBounds(142, 102, 103, 22);
+		Jugador.setBounds(142, 102, 123, 22);
 		String[] jugadorBBDD=Crear.jugador();
 		for (int i = 0; i < jugadorBBDD.length; i++) {
 		Jugador.addItem(jugadorBBDD[i]);
@@ -75,7 +75,7 @@ public class Borrar_Jugador extends JFrame {
 					
 			}
 		});
-		btnBorrarJugador.setBounds(223, 193, 103, 23);
+		btnBorrarJugador.setBounds(203, 193, 123, 23);
 		panel.add(btnBorrarJugador);
 		
 		JButton btnVolver = new JButton("Volver");

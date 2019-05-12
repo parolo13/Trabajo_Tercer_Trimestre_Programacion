@@ -47,7 +47,7 @@ public class Borrar_Equipo extends JFrame {
 		panel.add(lblEquipo);
 
 		JComboBox Equipo = new JComboBox();
-		Equipo.setBounds(135, 94, 103, 22);
+		Equipo.setBounds(135, 94, 126, 22);
 		String[] EquipoBBDD = Crear.Equipo();
 		for (int i = 0; i < EquipoBBDD.length; i++) {
 			Equipo.addItem(EquipoBBDD[i]);
@@ -86,7 +86,7 @@ public class Borrar_Equipo extends JFrame {
 				}
 			}
 		});
-		btnBorrarEquipo.setBounds(216, 185, 103, 23);
+		btnBorrarEquipo.setBounds(193, 185, 126, 23);
 		panel.add(btnBorrarEquipo);
 	}
 

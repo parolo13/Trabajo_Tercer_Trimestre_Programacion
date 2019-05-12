@@ -67,16 +67,16 @@ public class Eleccion extends JFrame {
 		btnNewButton_1.setBounds(283, 42, 89, 23);
 		panel.add(btnNewButton_1);
 		
-		JButton button = new JButton("Añadir");
-		button.addActionListener(new ActionListener() {
+		JButton btnCrear = new JButton("Crear");
+		btnCrear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Crear_Todo o=new Crear_Todo(usuario);
 				dispose();
 				o.setVisible(true);
 			}
 		});
-		button.setBounds(41, 106, 89, 23);
-		panel.add(button);
+		btnCrear.setBounds(41, 106, 89, 23);
+		panel.add(btnCrear);
 		
 		JButton btnBorrar = new JButton("Borrar");
 		btnBorrar.addActionListener(new ActionListener() {

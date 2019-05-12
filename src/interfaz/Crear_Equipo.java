@@ -57,7 +57,7 @@ public class Crear_Equipo extends JFrame {
 		panel.add(lblTitulos);
 
 		JLabel lblEconomia = new JLabel("Economia");
-		lblEconomia.setBounds(200, 68, 46, 14);
+		lblEconomia.setBounds(200, 68, 79, 14);
 		panel.add(lblEconomia);
 
 		JLabel lblLiga = new JLabel("Liga");
@@ -65,14 +65,14 @@ public class Crear_Equipo extends JFrame {
 		panel.add(lblLiga);
 
 		JLabel lblJugadores = new JLabel("Jugadores");
-		lblJugadores.setBounds(200, 25, 54, 14);
+		lblJugadores.setBounds(200, 25, 79, 14);
 		panel.add(lblJugadores);
 
 		Nombre = new JTextField();
 		Nombre.setBounds(77, 22, 105, 20);
 		panel.add(Nombre);
 		Nombre.setColumns(10);
-		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz  123456789-");
+		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz  123456789-áéíóú");
 
 		JComboBox Liga = new JComboBox();
 		Liga.setBounds(77, 64, 105, 22);
@@ -90,7 +90,7 @@ public class Crear_Equipo extends JFrame {
 		panel.add(Titulos);
 
 		JComboBox Economia = new JComboBox();
-		Economia.setBounds(256, 64, 105, 22);
+		Economia.setBounds(266, 64, 105, 22);
 		Economia.addItem("Quiebra");
 		Economia.addItem("Mala");
 		Economia.addItem("Aceptable");
@@ -100,7 +100,7 @@ public class Crear_Equipo extends JFrame {
 		panel.add(Economia);
 
 		JComboBox Jugadores = new JComboBox();
-		Jugadores.setBounds(256, 21, 105, 22);
+		Jugadores.setBounds(266, 21, 105, 22);
 		for (int i = 15; i < 31; i++) {
 			Jugadores.addItem(i + "");
 		}
@@ -134,7 +134,7 @@ public class Crear_Equipo extends JFrame {
 				}
 			}
 		});
-		btnCrearEquipo.setBounds(234, 217, 105, 23);
+		btnCrearEquipo.setBounds(234, 217, 118, 23);
 		panel.add(btnCrearEquipo);
 
 		JButton btnVolver = new JButton("Volver");

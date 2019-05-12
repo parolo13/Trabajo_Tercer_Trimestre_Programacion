@@ -48,7 +48,7 @@ public class Editar_Todo extends JFrame {
 				}
 			}
 		});
-		btnEditarJugador.setBounds(10, 11, 404, 23);
+		btnEditarJugador.setBounds(93, 11, 228, 23);
 		panel.add(btnEditarJugador);
 		
 		JButton btnEditarLiga = new JButton("Editar Equipo");
@@ -65,7 +65,7 @@ public class Editar_Todo extends JFrame {
 				
 			}
 		});
-		btnEditarLiga.setBounds(10, 63, 404, 23);
+		btnEditarLiga.setBounds(93, 63, 228, 23);
 		panel.add(btnEditarLiga);
 		
 		JButton button = new JButton("Editar Liga");
@@ -82,7 +82,7 @@ public class Editar_Todo extends JFrame {
 				
 			}
 		});
-		button.setBounds(10, 116, 404, 23);
+		button.setBounds(93, 117, 228, 23);
 		panel.add(button);
 		
 		JButton button_1 = new JButton("Volver");
@@ -93,7 +93,7 @@ public class Editar_Todo extends JFrame {
 				o.setVisible(true);
 			}
 		});
-		button_1.setBounds(10, 174, 404, 23);
+		button_1.setBounds(93, 174, 228, 23);
 		panel.add(button_1);
 	}
 

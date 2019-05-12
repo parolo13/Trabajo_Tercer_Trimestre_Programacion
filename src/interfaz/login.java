@@ -24,6 +24,7 @@ import programacion.Registro;
 
 import javax.swing.JSeparator;
 import java.awt.SystemColor;
+import javax.swing.JLabel;
 
 public class login extends JFrame {
 
@@ -140,6 +141,21 @@ public class login extends JFrame {
 		btnNewButton.setBackground(Color.LIGHT_GRAY);
 		btnNewButton.setBounds(59, 109, 317, 23);
 		contentPane.add(btnNewButton);
+		
+		JButton btnIniciarSesionSin = new JButton("Iniciar sesion sin registrarse");
+		btnIniciarSesionSin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				sesion_no_iniciada o=new sesion_no_iniciada(null);
+				dispose();
+				o.setVisible(true);
+			}
+		});
+		btnIniciarSesionSin.setBounds(185, 215, 190, 23);
+		contentPane.add(btnIniciarSesionSin);
+		
+		JLabel lblO = new JLabel("o");
+		lblO.setBounds(307, 193, 46, 14);
+		contentPane.add(lblO);
 
 	}
 }

@@ -59,7 +59,7 @@ public class siguiente_Crear_Jugador extends JFrame {
 		panel.add(lblEquipo);
 
 		JComboBox Equipo = new JComboBox();
-		Equipo.setBounds(98, 17, 122, 22);
+		Equipo.setBounds(111, 17, 122, 22);
 		String[] EquipoBBDD = Crear.Equipo(liga);
 		for (int i = 0; i < EquipoBBDD.length; i++) {
 			Equipo.addItem(EquipoBBDD[i]);
@@ -79,21 +79,21 @@ public class siguiente_Crear_Jugador extends JFrame {
 		panel.add(IblMental);
 
 		JComboBox Tecnica = new JComboBox();
-		Tecnica.setBounds(98, 55, 122, 22);
+		Tecnica.setBounds(111, 55, 122, 22);
 		for (int i = 0; i < 21; i++) {
 			Tecnica.addItem(i);
 		}
 		panel.add(Tecnica);
 
 		JComboBox Mental = new JComboBox();
-		Mental.setBounds(98, 88, 122, 22);
+		Mental.setBounds(111, 88, 122, 22);
 		for (int i = 0; i < 21; i++) {
 			Mental.addItem(i);
 		}
 		panel.add(Mental);
 
 		JComboBox Fisico = new JComboBox();
-		Fisico.setBounds(98, 126, 122, 22);
+		Fisico.setBounds(111, 122, 122, 22);
 		for (int i = 0; i < 21; i++) {
 			Fisico.addItem(i);
 		}

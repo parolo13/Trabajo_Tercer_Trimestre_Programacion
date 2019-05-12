@@ -52,7 +52,7 @@ public class Crear_Jugador extends JFrame {
 		JTextField Nombre = new JTextField();
 		Nombre.setBounds(66, 25, 115, 20);
 		panel.add(Nombre);
-		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz -");
+		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz -áéíóú");
 		
 
 		JComboBox Liga = new JComboBox();
@@ -81,7 +81,7 @@ public class Crear_Jugador extends JFrame {
 		panel.add(Posicion);
 
 		JComboBox CalificacionMedia = new JComboBox();
-		CalificacionMedia.setBounds(309, 151, 53, 22);
+		CalificacionMedia.setBounds(361, 151, 53, 22);
 		CalificacionMedia.addItem("1");
 		CalificacionMedia.addItem("2");
 		CalificacionMedia.addItem("3");
@@ -209,15 +209,15 @@ public class Crear_Jugador extends JFrame {
 		panel.add(lblLiga);
 
 		JLabel lblPosicion = new JLabel("Posicion");
-		lblPosicion.setBounds(208, 87, 46, 14);
+		lblPosicion.setBounds(208, 87, 56, 14);
 		panel.add(lblPosicion);
 
 		JLabel lblDorsal = new JLabel("Dorsal");
-		lblDorsal.setBounds(208, 118, 46, 14);
+		lblDorsal.setBounds(208, 118, 56, 14);
 		panel.add(lblDorsal);
 
 		JLabel lblCalificacionMedia = new JLabel("Calificacion Media");
-		lblCalificacionMedia.setBounds(208, 155, 91, 14);
+		lblCalificacionMedia.setBounds(208, 155, 143, 14);
 		panel.add(lblCalificacionMedia);
 
 	}

@@ -41,19 +41,19 @@ public class siguiente_siguiente_editar_jugador extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblEquipo = new JLabel("Equipo");
-		lblEquipo.setBounds(22, 37, 46, 14);
+		lblEquipo.setBounds(10, 37, 58, 14);
 		panel.add(lblEquipo);
 		
 		JLabel lblTecnica = new JLabel("Tecnica");
-		lblTecnica.setBounds(22, 69, 46, 14);
+		lblTecnica.setBounds(10, 73, 58, 14);
 		panel.add(lblTecnica);
 		
 		JLabel lblMental = new JLabel("Mental");
-		lblMental.setBounds(215, 37, 46, 14);
+		lblMental.setBounds(215, 37, 66, 14);
 		panel.add(lblMental);
 		
 		JLabel lblFisico = new JLabel("Fisico");
-		lblFisico.setBounds(215, 73, 46, 14);
+		lblFisico.setBounds(215, 73, 66, 14);
 		panel.add(lblFisico);
 		
 		JComboBox Equipo = new JComboBox();
@@ -104,7 +104,7 @@ public class siguiente_siguiente_editar_jugador extends JFrame {
 				
 			}
 		});
-		btnEditarJugador.setBounds(154, 205, 107, 23);
+		btnEditarJugador.setBounds(141, 205, 138, 23);
 		panel.add(btnEditarJugador);
 	}
 

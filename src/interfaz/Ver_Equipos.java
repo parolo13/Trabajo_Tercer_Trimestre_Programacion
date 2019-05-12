@@ -51,13 +51,19 @@ public class Ver_Equipos extends JFrame {
 		DefaultTableModel modelo = new DefaultTableModel(datos, titulo);
 		table.setModel(modelo);
 		JScrollPane scroll = new JScrollPane(table);
-		
+
 		btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Ver_Todo o=new Ver_Todo(usuario);
-				dispose();
-				o.setVisible(true);
+				if (usuario == null) {
+					sesion_no_iniciada o = new sesion_no_iniciada(usuario);
+					dispose();
+					o.setVisible(true);
+				} else {
+					Ver_Todo o = new Ver_Todo(usuario);
+					dispose();
+					o.setVisible(true);
+				}
 			}
 		});
 		btnVolver.setBounds(0, 0, 89, 23);
@@ -69,8 +75,7 @@ public class Ver_Equipos extends JFrame {
 		getContentPane().add(scroll, BorderLayout.NORTH);
 
 		try {
-			ResultSet rs = Conexion.EjecutarSetencia(
-					"Select nombre,Liga,Titulos,Num_Jugadores ,Economia FROM equipos");
+			ResultSet rs = Conexion.EjecutarSetencia("Select nombre,Liga,Titulos,Num_Jugadores ,Economia FROM equipos");
 			while (rs.next()) {
 				Object[] fila = new Object[5];
 				for (int i = 0; i < 5; i++)

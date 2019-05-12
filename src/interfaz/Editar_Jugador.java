@@ -42,7 +42,7 @@ public class Editar_Jugador extends JFrame {
 		panel.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Jugador a editar");
-		lblNewLabel.setBounds(53, 82, 92, 14);
+		lblNewLabel.setBounds(44, 82, 112, 14);
 		panel.add(lblNewLabel);
 
 		JComboBox Jugador = new JComboBox();

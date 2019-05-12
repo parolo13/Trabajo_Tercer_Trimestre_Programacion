@@ -66,7 +66,7 @@ public class siguiente_editar_jugador extends JFrame {
 		panel.add(lblEdad);
 
 		JLabel lblValor = new JLabel("Valor");
-		lblValor.setBounds(26, 119, 81, 14);
+		lblValor.setBounds(26, 119, 62, 14);
 		panel.add(lblValor);
 
 		JLabel lblPosicion = new JLabel("Posicion");
@@ -74,7 +74,7 @@ public class siguiente_editar_jugador extends JFrame {
 		panel.add(lblPosicion);
 
 		JLabel lblNewLabel = new JLabel("Calificacion");
-		lblNewLabel.setBounds(209, 123, 62, 14);
+		lblNewLabel.setBounds(209, 155, 81, 14);
 		panel.add(lblNewLabel);
 
 		JLabel lblDorsal = new JLabel("Dorsal");
@@ -89,7 +89,7 @@ public class siguiente_editar_jugador extends JFrame {
 		panel.add(Dorsal);
 
 		JComboBox Liga = new JComboBox();
-		Liga.setBounds(111, 47, 88, 22);
+		Liga.setBounds(98, 47, 101, 22);
 		String[] ligaBBDD = Crear.Liga();
 		for (int i = 0; i < ligaBBDD.length; i++) {
 			Liga.addItem(ligaBBDD[i]);
@@ -97,21 +97,21 @@ public class siguiente_editar_jugador extends JFrame {
 		panel.add(Liga);
 
 		JComboBox Valor = new JComboBox();
-		Valor.setBounds(111, 115, 88, 22);
+		Valor.setBounds(98, 115, 101, 22);
 		for (int i = 1; i < 300; i++) {
 			Valor.addItem(i + ",00 Millones");
 		}
 		panel.add(Valor);
 
 		JComboBox Edad = new JComboBox();
-		Edad.setBounds(111, 80, 88, 22);
+		Edad.setBounds(98, 80, 101, 22);
 		for (int i = 15; i < 51; i++) {
 			Edad.addItem(i + " años");
 		}
 		panel.add(Edad);
 
 		JComboBox Posicion = new JComboBox();
-		Posicion.setBounds(111, 144, 88, 22);
+		Posicion.setBounds(98, 144, 101, 22);
 		Posicion.addItem("Portero");
 		Posicion.addItem("Lateral derecho");
 		Posicion.addItem("Lateral izquierdo");
@@ -137,7 +137,7 @@ public class siguiente_editar_jugador extends JFrame {
 		panel.add(Valoracion);
 
 		JComboBox Pais = new JComboBox();
-		Pais.setBounds(272, 80, 94, 22);
+		Pais.setBounds(275, 80, 94, 22);
 		String[] paisBBDD = Crear.Pais();
 		for (int i = 0; i < paisBBDD.length; i++) {
 			Pais.addItem(paisBBDD[i]);
@@ -145,7 +145,7 @@ public class siguiente_editar_jugador extends JFrame {
 		panel.add(Pais);
 
 		JComboBox Calificacion = new JComboBox();
-		Calificacion.setBounds(272, 115, 94, 22);
+		Calificacion.setBounds(300, 144, 94, 22);
 		Calificacion.setBounds(309, 151, 53, 22);
 		Calificacion.addItem("1");
 		Calificacion.addItem("2");
@@ -160,10 +160,10 @@ public class siguiente_editar_jugador extends JFrame {
 		panel.add(Calificacion);
 
 		Nombre = new JTextField();
-		Nombre.setBounds(113, 13, 86, 20);
+		Nombre.setBounds(98, 13, 101, 20);
 		panel.add(Nombre);
 		Nombre.setColumns(10);
-		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz -");
+		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz -áéíóú");
 
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {

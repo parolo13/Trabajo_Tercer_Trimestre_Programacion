@@ -62,7 +62,7 @@ public class Crear_Liga extends JFrame {
 		Nombre.setBounds(103, 22, 86, 20);
 		panel.add(Nombre);
 		Nombre.setColumns(10);
-		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz  123456789");
+		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz  123456789áéíóú");
 		
 		JComboBox Pais = new JComboBox();
 		Pais.setBounds(103, 58, 86, 22);
@@ -95,7 +95,7 @@ public class Crear_Liga extends JFrame {
 				}
 			}
 		});
-		btnNewButton.setBounds(219, 194, 89, 23);
+		btnNewButton.setBounds(219, 194, 103, 23);
 		panel.add(btnNewButton);
 		
 		JButton btnVolver = new JButton("Volver");
