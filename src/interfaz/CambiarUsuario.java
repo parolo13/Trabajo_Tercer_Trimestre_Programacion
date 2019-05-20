@@ -52,6 +52,10 @@ public class CambiarUsuario extends JFrame {
 		Usuario.setBounds(208, 67, 99, 20);
 		panel.add(Usuario);
 		
+		
+		/**
+		 * Cambia el usuario si no esta repetido
+		 */
 		JButton btnConfirmarCambio = new JButton("Confirmar cambio");
 		btnConfirmarCambio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

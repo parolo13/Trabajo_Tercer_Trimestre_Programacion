@@ -48,6 +48,10 @@ public class CambiarContraseña extends JFrame {
 		contraseña.setBounds(240, 78, 99, 20);
 		panel.add(contraseña);
 		
+		
+		/**
+		 * Para cambiar la contraseña
+		 */
 		JButton button = new JButton("Confirmar cambio");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

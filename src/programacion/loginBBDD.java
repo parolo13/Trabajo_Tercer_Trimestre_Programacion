@@ -7,6 +7,9 @@ import javax.swing.JOptionPane;
 import BBDD.ContraseñaBBDD;
 import BBDD.UsuarioBBDD;
 
+/**
+ * Aqui comprobamos si existe la contraseña y el usuario
+ */
 public class loginBBDD {
 	public static boolean Login(String usuario, String contraseña) throws SQLException {
 		String[] usuarioBBDD = UsuarioBBDD.Usuario();

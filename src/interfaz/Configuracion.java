@@ -18,7 +18,7 @@ public class Configuracion extends JFrame {
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Este es el panel para cambiar usuario, contraseña o correo
 	 */
 	
 	/**

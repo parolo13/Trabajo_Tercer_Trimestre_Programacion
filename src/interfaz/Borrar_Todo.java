@@ -10,13 +10,15 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class Borrar_Todo extends JFrame {
 
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Desde este Panel se van llamando a los diferentes paneles para eleminar
 	 */
 
 	/**
@@ -43,7 +45,7 @@ public class Borrar_Todo extends JFrame {
 				}
 			}
 		});
-		button.setBounds(85, 27, 241, 23);
+		button.setBounds(85, 27, 224, 23);
 		contentPane.add(button);
 		
 		JButton button_1 = new JButton("Borrar Equipos");
@@ -60,7 +62,7 @@ public class Borrar_Todo extends JFrame {
 				
 			}
 		});
-		button_1.setBounds(85, 94, 241, 23);
+		button_1.setBounds(85, 94, 224, 23);
 		contentPane.add(button_1);
 		
 		JButton button_2 = new JButton("Borrar Ligas");
@@ -77,7 +79,7 @@ public class Borrar_Todo extends JFrame {
 				}
 			}
 		});
-		button_2.setBounds(85, 158, 241, 23);
+		button_2.setBounds(85, 158, 224, 23);
 		contentPane.add(button_2);
 		
 		JButton btnVolver = new JButton("Volver");
@@ -90,5 +92,10 @@ public class Borrar_Todo extends JFrame {
 		});
 		btnVolver.setBounds(125, 213, 151, 23);
 		contentPane.add(btnVolver);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(Borrar_Todo.class.getResource("/interfaz/descarga (1).jpg")));
+		label.setBounds(85, 0, 434, 261);
+		contentPane.add(label);
 	}
 }

@@ -9,7 +9,9 @@ import javax.swing.JTextPane;
 
 import BBDD.Conexion;
 import BBDD.UsuarioBBDD;
-
+/**
+ * Aqui comprobamos si existe un usuario y se compueba la veracidad del correo, finalmente se hace el insert
+ */
 public class Registro {
 	public static boolean Usuario(String usuario, String clave, String correo) throws SQLException {
 		String[] solucion = UsuarioBBDD.Usuario();

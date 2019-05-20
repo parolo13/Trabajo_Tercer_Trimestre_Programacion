@@ -45,6 +45,9 @@ public class Editar_Jugador extends JFrame {
 		lblNewLabel.setBounds(44, 82, 112, 14);
 		panel.add(lblNewLabel);
 
+		/**
+		 * Se rellena el combobox para elegir al jugador que queramos editar
+		 */
 		JComboBox Jugador = new JComboBox();
 		Jugador.setBounds(166, 78, 120, 22);
 		String[] jugadorBBDD = Crear.jugador();
@@ -57,6 +60,9 @@ public class Editar_Jugador extends JFrame {
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String jugador = (String) Jugador.getSelectedItem();
+				/**
+				 * Si no exite el jugadorno te deja editarlo
+				 */
 				if (jugador == null) {
 					JOptionPane.showMessageDialog(null, "No se ha seleccionado ningun jugador", "ERROR",
 							JOptionPane.ERROR_MESSAGE);

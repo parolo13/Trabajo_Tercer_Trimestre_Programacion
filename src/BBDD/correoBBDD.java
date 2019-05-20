@@ -3,6 +3,9 @@ package BBDD;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Aqui hacemos el select para el correo y la metemos en un array
+ */
 public class correoBBDD {
 	public static String[] Correo() throws SQLException {
 		int i=0;

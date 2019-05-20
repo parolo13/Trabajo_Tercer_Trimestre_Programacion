@@ -15,13 +15,15 @@ import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
 import interfaz.Crear_Jugador;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class Crear_Todo extends JFrame {
 
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Es el Jpanel que manda al resto de Jpanels
 	 */
 
 
@@ -54,7 +56,7 @@ public class Crear_Todo extends JFrame {
 				}
 			}
 		});
-		btnNewButton.setBounds(10, 23, 404, 23);
+		btnNewButton.setBounds(69, 24, 269, 23);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_2 = new JButton("Crear Liga");
@@ -71,7 +73,7 @@ public class Crear_Todo extends JFrame {
 				
 			}
 		});
-		btnNewButton_2.setBounds(10, 158, 404, 23);
+		btnNewButton_2.setBounds(69, 158, 269, 23);
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton_4 = new JButton("Crear Equipos");
@@ -88,7 +90,7 @@ public class Crear_Todo extends JFrame {
 				
 			}
 		});
-		btnNewButton_4.setBounds(10, 94, 404, 23);
+		btnNewButton_4.setBounds(69, 93, 269, 23);
 		panel.add(btnNewButton_4);
 		
 		JButton btnVolver = new JButton("Volver");
@@ -99,7 +101,12 @@ public class Crear_Todo extends JFrame {
 				o.setVisible(true);
 			}
 		});
-		btnVolver.setBounds(10, 217, 404, 23);
+		btnVolver.setBounds(112, 217, 197, 23);
 		panel.add(btnVolver);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(Crear_Todo.class.getResource("/interfaz/450_1000.jpg")));
+		label.setBounds(0, 0, 424, 251);
+		panel.add(label);
 	}
 }

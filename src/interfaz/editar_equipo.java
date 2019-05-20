@@ -44,7 +44,9 @@ public class editar_equipo extends JFrame {
 		JLabel lblEdiarEquipo = new JLabel("Equipo a editar");
 		lblEdiarEquipo.setBounds(33, 98, 96, 14);
 		panel.add(lblEdiarEquipo);
-
+		/**
+		 * Se rellena el combobox para la eleccion de equipo que queremos editar
+		 */
 		JComboBox Equipo = new JComboBox();
 		Equipo.setBounds(135, 94, 132, 22);
 		String[] EquipoBBDD = Crear.Equipo();
@@ -68,7 +70,9 @@ public class editar_equipo extends JFrame {
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String equipo = (String) Equipo.getSelectedItem();
-
+				/**
+				 * Si está vacio no te deja entrar
+				 */
 				if (equipo == null) {
 					JOptionPane.showMessageDialog(null, "No se ha seleccionado ningun equipo", "ERROR",
 							JOptionPane.ERROR_MESSAGE);

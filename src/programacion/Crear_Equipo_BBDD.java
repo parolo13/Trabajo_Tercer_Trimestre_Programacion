@@ -3,7 +3,9 @@ package programacion;
 import java.sql.SQLException;
 
 import BBDD.Conexion;
-
+/**
+ * Aqui hacemos el Insert para crear el equipo
+ */
 public class Crear_Equipo_BBDD {
 	public static void equipo(String nombre, String liga, String titulos, String economia, String jugadores) throws SQLException {
 		Conexion.EjecutarUpdate(

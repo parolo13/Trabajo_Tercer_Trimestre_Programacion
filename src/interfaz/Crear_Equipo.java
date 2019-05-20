@@ -72,8 +72,11 @@ public class Crear_Equipo extends JFrame {
 		Nombre.setBounds(77, 22, 105, 20);
 		panel.add(Nombre);
 		Nombre.setColumns(10);
-		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz  123456789-áéíóú");
+		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz  0123456789-áéíóú");
 
+		/**
+		 * Se rellena el combobox
+		 */
 		JComboBox Liga = new JComboBox();
 		Liga.setBounds(77, 64, 105, 22);
 		String[] ligaBBDD = Crear.Liga();
@@ -82,6 +85,10 @@ public class Crear_Equipo extends JFrame {
 		}
 		panel.add(Liga);
 
+		
+		/**
+		 * Se rellena el combobox
+		 */
 		JComboBox Titulos = new JComboBox();
 		Titulos.setBounds(77, 110, 105, 22);
 		for (int i = 0; i < 101; i++) {
@@ -89,6 +96,10 @@ public class Crear_Equipo extends JFrame {
 		}
 		panel.add(Titulos);
 
+		
+		/**
+		 * Se rellena el combobox
+		 */
 		JComboBox Economia = new JComboBox();
 		Economia.setBounds(266, 64, 105, 22);
 		Economia.addItem("Quiebra");
@@ -99,6 +110,10 @@ public class Crear_Equipo extends JFrame {
 
 		panel.add(Economia);
 
+		
+		/**
+		 * Se rellena el combobox
+		 */
 		JComboBox Jugadores = new JComboBox();
 		Jugadores.setBounds(266, 21, 105, 22);
 		for (int i = 15; i < 31; i++) {
@@ -113,6 +128,9 @@ public class Crear_Equipo extends JFrame {
 				String titulos = (String) Titulos.getSelectedItem();
 				String economia = (String) Economia.getSelectedItem();
 				String jugadores = (String) Jugadores.getSelectedItem();
+				/**
+				 * No puede no existir una liga ni un equipo
+				 */
 				if (liga==null) {
 					JOptionPane.showMessageDialog(null, "La liga esta vacía, si no hay ligas,crea una", "ERROR",
 							JOptionPane.ERROR_MESSAGE);

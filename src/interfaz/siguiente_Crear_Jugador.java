@@ -57,7 +57,9 @@ public class siguiente_Crear_Jugador extends JFrame {
 		JLabel lblEquipo = new JLabel("Equipo");
 		lblEquipo.setBounds(29, 21, 59, 14);
 		panel.add(lblEquipo);
-
+		/**
+		 * Se rellena el combobox
+		 */
 		JComboBox Equipo = new JComboBox();
 		Equipo.setBounds(111, 17, 122, 22);
 		String[] EquipoBBDD = Crear.Equipo(liga);
@@ -106,6 +108,9 @@ public class siguiente_Crear_Jugador extends JFrame {
 				int mental = (int) Mental.getSelectedItem();
 				int fisico = (int) Fisico.getSelectedItem();
 				String equipo = (String) Equipo.getSelectedItem();
+				/**
+				 * Si no existe equipo no te deja crearlo
+				 */
 				if (equipo==null) {
 					JOptionPane.showMessageDialog(null, "El equipo esta vacío, si no hay equipos,crea uno", "ERROR",
 							JOptionPane.ERROR_MESSAGE);

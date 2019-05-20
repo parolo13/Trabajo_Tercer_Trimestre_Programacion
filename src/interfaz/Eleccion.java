@@ -12,6 +12,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 
 public class Eleccion extends JFrame {
@@ -19,7 +23,7 @@ public class Eleccion extends JFrame {
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Este es el JPanel principal donde podemos ir a todos los Jpanel
 	 */
 
 
@@ -37,13 +41,6 @@ public class Eleccion extends JFrame {
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
-		
-		JTextPane txtpnquQuieresHacer = new JTextPane();
-		txtpnquQuieresHacer.setEditable(false);
-		txtpnquQuieresHacer.setBackground(UIManager.getColor("Button.background"));
-		txtpnquQuieresHacer.setText("\u00BFQu\u00E9 quieres hacer?");
-		txtpnquQuieresHacer.setBounds(142, 11, 230, 20);
-		panel.add(txtpnquQuieresHacer);
 		
 		JButton btnNewButton = new JButton("Ver");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -110,6 +107,15 @@ public class Eleccion extends JFrame {
 		});
 		btnConfiguracion.setBounds(214, 176, 158, 23);
 		panel.add(btnConfiguracion);
+		
+		JLabel lblquQuieresHacer = new JLabel("\u00BFQu\u00E9 quieres hacer?");
+		lblquQuieresHacer.setForeground(new Color(0, 0, 0));
+		lblquQuieresHacer.setBounds(151, 11, 138, 14);
+		panel.add(lblquQuieresHacer);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("C:\\Users\\usuario\\Desktop\\540.jpg"));
+		label.setBounds(-10, -22, 434, 284);
+		panel.add(label);
 	}
-
 }

@@ -81,6 +81,10 @@ public class siguiente_editar_jugador extends JFrame {
 		lblDorsal.setBounds(209, 16, 62, 14);
 		panel.add(lblDorsal);
 
+		
+		/**
+		 * Se rellena el combobox
+		 */
 		JComboBox Dorsal = new JComboBox();
 		Dorsal.setBounds(275, 12, 94, 22);
 		for (int i = 1; i < 100; i++) {
@@ -193,6 +197,10 @@ public class siguiente_editar_jugador extends JFrame {
 				String edad = (String) Edad.getSelectedItem();
 				String valor = (String) Valor.getSelectedItem();
 				String dorsal = (String) Dorsal.getSelectedItem();
+				
+				/**
+				 * El nombre no puede estar vacío
+				 */
 
 				if (Nombre.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "El nombre del jugador no puede estar vacío", "ERROR",

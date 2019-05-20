@@ -94,6 +94,9 @@ public class Registrarse extends JFrame {
 		JButton btnRegistrarse = new JButton("Registrarse");
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				/**
+				 * Comprobamos si las contraseñas coinciden
+				 */
 				if(! passwordField.getText().equals(passwordField_1.getText())) {
 					JTextPane textPane = new JTextPane();
 					textPane.setText("Error, las contrase\u00F1as no coinciden");

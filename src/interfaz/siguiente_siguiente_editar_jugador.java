@@ -56,6 +56,9 @@ public class siguiente_siguiente_editar_jugador extends JFrame {
 		lblFisico.setBounds(215, 73, 66, 14);
 		panel.add(lblFisico);
 		
+		/**
+		 * Se rellena el combobox
+		 */
 		JComboBox Equipo = new JComboBox();
 		Equipo.setBounds(78, 33, 98, 22);
 		String[] EquipoBBDD = Crear.Equipo(liga);

@@ -7,7 +7,9 @@ import javax.swing.JOptionPane;
 import BBDD.Conexion;
 import BBDD.ContraseñaBBDD;
 import BBDD.UsuarioBBDD;
-
+/**
+ * Primero comprobamos si existe o no en la base de datos el usuario
+ */
 public class CambioDeUsuario {
 	public static String Usuario(String usuarioNuevo,String usuarioAntiguo) throws SQLException {
 		String[] solucion = UsuarioBBDD.Usuario();
@@ -23,6 +25,9 @@ public class CambioDeUsuario {
 
 			}
 		}
+		/**
+		 * Aqui hacemos el update del nuevo usuario
+		 */
 		try {
 				Conexion.EjecutarUpdate("UPDATE usuarios SET Usuario='"+usuarioNuevo+"'where Usuario='"+usuarioAntiguo+"'");
 				JOptionPane.showMessageDialog(null, "Usuario cambiado", "Correcto", JOptionPane.INFORMATION_MESSAGE);

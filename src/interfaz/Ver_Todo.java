@@ -12,6 +12,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class Ver_Todo extends JFrame {
 
@@ -80,6 +82,11 @@ public class Ver_Todo extends JFrame {
 		});
 		btnVolver.setBounds(127, 196, 157, 23);
 		panel.add(btnVolver);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(Ver_Todo.class.getResource("/interfaz/noticia-sin-titulo-1.png")));
+		label.setBounds(33, 0, 425, 251);
+		panel.add(label);
 	}
 
 }

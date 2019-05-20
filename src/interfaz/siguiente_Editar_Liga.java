@@ -61,6 +61,10 @@ public class siguiente_Editar_Liga extends JFrame {
 		Nombre.setColumns(10);
 		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz  123456789-áéíóú");
 		
+		
+		/**
+		 * Se rellena el combobox
+		 */
 		JComboBox Pais = new JComboBox();
 		Pais.setBounds(103, 58, 86, 22);
 		String[] paisBBDD=Crear.Pais();
@@ -82,6 +86,10 @@ public class siguiente_Editar_Liga extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String pais = (String) Pais.getSelectedItem();
 				String division = (String) Division.getSelectedItem();
+				
+				/**
+				 * Si no tiene nombre no se puede crear 
+				 */
 				if(Nombre.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "El nombre de la liga no puede estar vacío", "ERROR", JOptionPane.ERROR_MESSAGE);
 				}else {

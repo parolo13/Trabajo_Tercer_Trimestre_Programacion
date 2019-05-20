@@ -21,10 +21,6 @@ import java.awt.event.ActionEvent;
 public class Borrar_Equipo extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
 	/**
 	 * Create the frame.
 	 * 
@@ -45,6 +41,10 @@ public class Borrar_Equipo extends JFrame {
 		JLabel lblEquipo = new JLabel("Equipo");
 		lblEquipo.setBounds(79, 98, 46, 14);
 		panel.add(lblEquipo);
+		
+		/**
+		 * Aqui rellenamos el JcomboBox con el array correspondiente
+		 */
 
 		JComboBox Equipo = new JComboBox();
 		Equipo.setBounds(135, 94, 126, 22);
@@ -69,6 +69,10 @@ public class Borrar_Equipo extends JFrame {
 		btnBorrarEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String equipo = (String) Equipo.getSelectedItem();
+				
+				/**
+				 * Si esta vacío que no deje hacer nada
+				 */
 				if (equipo == null) {
 					JOptionPane.showMessageDialog(null, "No se ha seleccionado ningun equipo", "ERROR",
 							JOptionPane.ERROR_MESSAGE);
@@ -77,6 +81,10 @@ public class Borrar_Equipo extends JFrame {
 							"¿Seguro que quieres borrar el equipo " + equipo
 									+ "? , cuidado que se borrararan los jugadores dentro de esa equipo",
 							"Cuidado", JOptionPane.YES_NO_OPTION);
+					
+					/**
+					 * Borramos al equipo
+					 */
 					if (eleccion == JOptionPane.YES_OPTION) {
 						Borrar_Jugador_BBDD.equipo(equipo);
 						Borrar_Todo o = new Borrar_Todo(usuario);

@@ -46,6 +46,9 @@ public class CambiarCorreo extends JFrame {
 		correo.setBounds(240, 64, 99, 20);
 		contentPane.add(correo);
 		
+		/**
+		 * Cambia el correo cogiendo el usuario
+		 */
 		JButton button = new JButton("Confirmar cambio");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

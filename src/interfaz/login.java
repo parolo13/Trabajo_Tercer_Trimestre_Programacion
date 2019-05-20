@@ -78,6 +78,9 @@ public class login extends JFrame {
 		JButton btnIniciarSesion = new JButton("Entrar");
 		btnIniciarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				/**
+				 * Comprueba si es correcto el usuario y la contraseña
+				 */
 				try {
 					if (loginBBDD.Login(textField.getText(), passwordField.getText())) {
 						Eleccion o = new Eleccion(textField.getText());
@@ -150,7 +153,7 @@ public class login extends JFrame {
 				o.setVisible(true);
 			}
 		});
-		btnIniciarSesionSin.setBounds(185, 215, 190, 23);
+		btnIniciarSesionSin.setBounds(170, 215, 205, 23);
 		contentPane.add(btnIniciarSesionSin);
 		
 		JLabel lblO = new JLabel("o");

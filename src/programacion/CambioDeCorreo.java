@@ -4,6 +4,9 @@ import javax.swing.JOptionPane;
 
 import BBDD.Conexion;
 
+/**
+ * Aqui hacemos el update del nuevo correo
+ */
 public class CambioDeCorreo {
 	public static void Correo(String correo,String usuario) {
 		if(Registro.isValidEmailAddress(correo)) {

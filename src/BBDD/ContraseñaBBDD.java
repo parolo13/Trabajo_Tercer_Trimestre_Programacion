@@ -2,7 +2,9 @@ package BBDD;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+/**
+ * Aqui hacemos el select para la contraseña y la metemos en un array
+ */
 public class ContraseñaBBDD {
 	public static String[] Contraseña() throws SQLException {
 		int i=0;

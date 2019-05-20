@@ -71,6 +71,10 @@ public class siguiente_editar_equipo extends JFrame {
 		Nombre.setColumns(10);
 		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz  123456789-áéíóú");
 
+		
+		/**
+		 * Se rellena el combobox
+		 */
 		JComboBox Liga = new JComboBox();
 		Liga.setBounds(77, 64, 105, 22);
 		String[] ligaBBDD = Crear.Liga();
@@ -110,6 +114,9 @@ public class siguiente_editar_equipo extends JFrame {
 				String titulos = (String) Titulos.getSelectedItem();
 				String economia = (String) Economia.getSelectedItem();
 				String jugadores = (String) Jugadores.getSelectedItem();
+				/**
+				 * El nombre no puede estar vacio
+				 */
 					if (Nombre.getText().equals("")) {
 						JOptionPane.showMessageDialog(null, "El nombre del equipo no puede estar vacío", "ERROR",
 								JOptionPane.ERROR_MESSAGE);

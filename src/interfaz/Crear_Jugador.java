@@ -54,6 +54,10 @@ public class Crear_Jugador extends JFrame {
 		panel.add(Nombre);
 		RestrictedTextField restricted = new RestrictedTextField(Nombre,"abcdefghijklmnñopqrstuvwxyz -áéíóú");
 		
+		
+		/**
+		 * Se rellenan los comboboxs
+		 */
 
 		JComboBox Liga = new JComboBox();
 		Liga.setBounds(274, 56, 140, 22);
@@ -146,6 +150,10 @@ public class Crear_Jugador extends JFrame {
 				int dorsal = (int) Dorsal.getSelectedItem();
 
 				siguiente_Crear_Jugador o;
+				
+				/**
+				 *Tiene que existir liga y el nombre no puede estar vacio
+				 */
 				if (liga==null) {
 					JOptionPane.showMessageDialog(null, "La liga esta vacía, si no hay ligas,crea una", "ERROR",
 							JOptionPane.ERROR_MESSAGE);
@@ -154,6 +162,9 @@ public class Crear_Jugador extends JFrame {
 						JOptionPane.showMessageDialog(null, "El nombre del jugador no puede estar vacío", "ERROR",
 								JOptionPane.ERROR_MESSAGE);
 					} else {
+						/**
+						 * Lo manda a otro Jpanel para rellenar mas datos
+						 */
 						try {
 							Crear_Jugador_BBDD.Jugador(Nombre.getText(), valoracionMedia, pais, liga, null, edad, valor,
 									posicion, Integer.toString(dorsal), calificacionMedia);

@@ -1,0 +1,5 @@
+ID_Jugador;Nombre_Completo;Valoracion_Media;ID_Pais;Pais;ID_Liga;Liga;ID_Equipo;Equipo;Edad;Valor;Posicion;Dorsal;Calificacion_Media
+3;Canales;5;73;España;18;Liga Santander;1;Betis;28 años;1,00 Millones;Mediapunta;10;5
+4;Kluivert;5;166;Países Bajos;18;Liga Santander;1;Betis;41 años;299,00 Millones;Delantero centro;99;10
+5;Neuer;4;4;Alemania;19;Bundesliga;2;Bayern;30 años;100,00 Millones;Portero;1;7
+6;Pau Lopez;5;73;España;18;Liga Santander;1;Betis;23 años;21,00 Millones;Portero;1;10

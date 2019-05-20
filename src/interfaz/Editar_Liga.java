@@ -43,6 +43,10 @@ public class Editar_Liga extends JFrame {
 		lblLigaAEditar.setBounds(47, 97, 85, 14);
 		panel.add(lblLigaAEditar);
 		
+		
+		/**
+		 * Se rellena el combobox para escoger la liga que vamos a editar
+		 */
 		JComboBox Liga = new JComboBox();
 		Liga.setBounds(142, 93, 130, 22);
 		String[] ligaBBDD = Crear.Liga();

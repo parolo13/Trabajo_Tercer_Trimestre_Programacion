@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-
 import programacion.Borrar_Jugador_BBDD;
 import programacion.Crear;
 
@@ -24,12 +23,9 @@ public class Borrar_Jugador extends JFrame {
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
-	 */
-
-	/**
 	 * Create the frame.
-	 * @throws SQLException 
+	 * 
+	 * @throws SQLException
 	 */
 	public Borrar_Jugador(String usuario) throws SQLException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,56 +34,70 @@ public class Borrar_Jugador extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		
+
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
-		
+
 		JLabel lblJugador = new JLabel("Jugador");
 		lblJugador.setBounds(73, 106, 68, 14);
 		panel.add(lblJugador);
-		
+
+		/**
+		 * Rellenamos el JComboBox con el array correspondiente
+		 */
+
 		JComboBox Jugador = new JComboBox();
 		Jugador.setBounds(142, 102, 123, 22);
-		String[] jugadorBBDD=Crear.jugador();
+		String[] jugadorBBDD = Crear.jugador();
 		for (int i = 0; i < jugadorBBDD.length; i++) {
-		Jugador.addItem(jugadorBBDD[i]);
+			Jugador.addItem(jugadorBBDD[i]);
 		}
 		panel.add(Jugador);
-		
+
 		JButton btnBorrarJugador = new JButton("Borrar jugador");
 		btnBorrarJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String jugador = (String) Jugador.getSelectedItem();
-				if(jugador==null) {
+
+				/**
+				 * No puede estar vacío
+				 */
+				if (jugador == null) {
 					JOptionPane.showMessageDialog(null, "No se ha seleccionado ningun jugador", "ERROR",
 							JOptionPane.ERROR_MESSAGE);
-				}else {
+				} else {
+
+					int eleccion = JOptionPane.showConfirmDialog(null,
+							"¿Seguro que quieres borrar al jugador " + jugador + "?", "Cuidado",
+							JOptionPane.YES_NO_OPTION);
 					
-				int eleccion = JOptionPane.showConfirmDialog(null, "¿Seguro que quieres borrar al jugador "+jugador+"?","Cuidado",JOptionPane.YES_NO_OPTION);
-				if(eleccion==JOptionPane.YES_OPTION) {
-					Borrar_Jugador_BBDD.jugador(jugador);
-					Borrar_Todo o=new Borrar_Todo(usuario);
-					dispose();
-					o.setVisible(true);
+					/**
+					 * Se borra el jugador
+					 */
+					if (eleccion == JOptionPane.YES_OPTION) {
+						Borrar_Jugador_BBDD.jugador(jugador);
+						Borrar_Todo o = new Borrar_Todo(usuario);
+						dispose();
+						o.setVisible(true);
+					}
 				}
-				}
-					
+
 			}
 		});
 		btnBorrarJugador.setBounds(203, 193, 123, 23);
 		panel.add(btnBorrarJugador);
-		
+
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Borrar_Todo o=new Borrar_Todo(usuario);
+				Borrar_Todo o = new Borrar_Todo(usuario);
 				dispose();
 				o.setVisible(true);
 			}
 		});
 		btnVolver.setBounds(88, 193, 89, 23);
 		panel.add(btnVolver);
-		
+
 	}
 }

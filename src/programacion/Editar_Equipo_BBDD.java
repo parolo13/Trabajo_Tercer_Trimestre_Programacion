@@ -3,7 +3,9 @@ package programacion;
 import java.sql.SQLException;
 
 import BBDD.Conexion;
-
+/**
+ * Aqui hacemos el update del equipo
+ */
 public class Editar_Equipo_BBDD {
 	public static void equipo(String nombre, String liga, String titulos, String economia, String jugadores,
 			String equipo) throws SQLException {

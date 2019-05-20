@@ -4,6 +4,9 @@ import java.sql.SQLException;
 
 import BBDD.Conexion;
 
+/**
+ * Aqui hacemos el supdate para editar el jugador
+ */
 public class Editar_Jugador_BBDD {
 	public static void Jugador(String Nombre, String Valoracion, String Pais, String Liga, String Equipo, String Edad,
 			String Valor, String Posicion, String Dorsal, String Calificacion, String jugador) throws SQLException {

@@ -2,7 +2,9 @@ package BBDD;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+/**
+ * Aqui hacemos el select para el usuario y la metemos en un array
+ */
 
 public class UsuarioBBDD {
 	public static String[] Usuario() throws SQLException {

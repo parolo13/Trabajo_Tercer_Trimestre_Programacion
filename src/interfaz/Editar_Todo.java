@@ -10,13 +10,15 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class Editar_Todo extends JFrame {
 
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Este jPanel nos lleva a otros Jpanel de edicion
 	 */
 	
 
@@ -95,6 +97,11 @@ public class Editar_Todo extends JFrame {
 		});
 		button_1.setBounds(93, 174, 228, 23);
 		panel.add(button_1);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(Editar_Todo.class.getResource("/interfaz/maxresdefault.jpg")));
+		label.setBounds(-75, 0, 499, 262);
+		panel.add(label);
 	}
 
 }

@@ -37,22 +37,22 @@ public class ContraseñaOlvidada extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		
+
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
-		
+
 		JTextPane txtpnCorreo = new JTextPane();
 		txtpnCorreo.setEditable(false);
 		txtpnCorreo.setBackground(UIManager.getColor("Button.background"));
 		txtpnCorreo.setText("Correo");
 		txtpnCorreo.setBounds(20, 118, 53, 20);
 		panel.add(txtpnCorreo);
-		
+
 		JTextPane Correo = new JTextPane();
 		Correo.setBounds(83, 118, 217, 20);
 		panel.add(Correo);
-		
+
 		JTextPane txtpnRecuperarContrasea = new JTextPane();
 		txtpnRecuperarContrasea.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		txtpnRecuperarContrasea.setEditable(false);
@@ -61,7 +61,7 @@ public class ContraseñaOlvidada extends JFrame {
 		txtpnRecuperarContrasea.setText("Recuperar contrase\u00F1a");
 		txtpnRecuperarContrasea.setBounds(83, 28, 217, 46);
 		panel.add(txtpnRecuperarContrasea);
-		
+
 		JButton btnRecuperarContrasea = new JButton("Recuperar contrase\u00F1a");
 		btnRecuperarContrasea.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -72,22 +72,29 @@ public class ContraseñaOlvidada extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				if(nuevaCon.equals("0")) {
+
+				/**
+				 * Si devuelve 0 es que no esta bien el correo, y si no , le da la nueva
+				 * contraseña y la muestra por pantalla
+				 */
+				if (nuevaCon.equals("0")) {
 					JOptionPane.showMessageDialog(null, "Correo incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
-					}else {
-						System.out.println(nuevaCon);
-						JOptionPane.showMessageDialog(null, "tu nueva contraseña es "+nuevaCon, "Contraseña", JOptionPane.INFORMATION_MESSAGE);
-						Conexion.EjecutarUpdate("UPDATE usuarios SET Clave='"+nuevaCon+"' where Correo='"+Correo.getText()+"'");
-					}
+				} else {
+					System.out.println(nuevaCon);
+					JOptionPane.showMessageDialog(null, "tu nueva contraseña es " + nuevaCon, "Contraseña",
+							JOptionPane.INFORMATION_MESSAGE);
+					Conexion.EjecutarUpdate(
+							"UPDATE usuarios SET Clave='" + nuevaCon + "' where Correo='" + Correo.getText() + "'");
+				}
 			}
 		});
 		btnRecuperarContrasea.setBounds(127, 169, 139, 23);
 		panel.add(btnRecuperarContrasea);
-		
+
 		JButton btnAtrs = new JButton("Volver");
 		btnAtrs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				login o=new login();
+				login o = new login();
 				dispose();
 				o.setVisible(true);
 			}

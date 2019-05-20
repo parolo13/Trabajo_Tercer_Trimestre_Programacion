@@ -1,7 +1,9 @@
 package programacion;
 
 import BBDD.Conexion;
-
+/**
+ * Aqui hacemos el delete de todos los registros
+ */
 public class Borrar_Jugador_BBDD {
 	public static void jugador(String jugador) {
 		Conexion.EjecutarUpdate("DELETE FROM `jugadores` WHERE Nombre_Completo='"+jugador+"'");

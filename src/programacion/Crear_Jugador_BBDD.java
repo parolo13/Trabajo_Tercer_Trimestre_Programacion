@@ -4,7 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import BBDD.Conexion;
-
+/**
+ * Aqui hacemos el insert para el jugador
+ */
 public class Crear_Jugador_BBDD {
 	public static void Jugador(String Nombre, String Valoracion, String Pais, String Liga, String Equipo, String Edad,
 			String Valor, String Posicion, String Dorsal, String Calificacion) throws SQLException {

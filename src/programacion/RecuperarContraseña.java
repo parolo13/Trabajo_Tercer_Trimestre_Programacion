@@ -7,7 +7,9 @@ import javax.swing.JOptionPane;
 
 import BBDD.UsuarioBBDD;
 import BBDD.correoBBDD;
-
+/**
+ * Aqui se crea la nueva contraseña cuando se quiere recuperar
+ */
 public class RecuperarContraseña {
 	public static String RecuperarCon(String Correo) throws SQLException {
 		String[] solucion = correoBBDD.Correo();

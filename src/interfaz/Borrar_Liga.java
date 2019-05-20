@@ -21,10 +21,6 @@ import java.awt.event.ActionEvent;
 public class Borrar_Liga extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
 	/**
 	 * Create the frame.
 	 * 
@@ -46,6 +42,9 @@ public class Borrar_Liga extends JFrame {
 		lblLiga.setBounds(122, 105, 46, 14);
 		panel.add(lblLiga);
 
+		/**
+		 * Rellenamos el JComboBox con el array correspondiente
+		 */
 		JComboBox Liga = new JComboBox();
 		Liga.setBounds(178, 101, 129, 22);
 		String[] ligaBBDD = Crear.Liga();
@@ -58,6 +57,10 @@ public class Borrar_Liga extends JFrame {
 		btnBorrarLiga.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String liga = (String) Liga.getSelectedItem();
+				
+				/**
+				 * No puede estar vacío
+				 */
 				if (liga == null) {
 					JOptionPane.showMessageDialog(null, "No se ha seleccionado ninguna liga", "ERROR",
 							JOptionPane.ERROR_MESSAGE);
@@ -67,6 +70,10 @@ public class Borrar_Liga extends JFrame {
 							"¿Seguro que quieres borrar la liga " + liga
 									+ "? , cuidado que se borrararan los jugadores y equipos dentro de esa liga",
 							"Cuidado", JOptionPane.YES_NO_OPTION);
+					
+					/**
+					 * Se borra la liga
+					 */
 					if (eleccion == JOptionPane.YES_OPTION) {
 						Borrar_Jugador_BBDD.liga(liga);
 						Borrar_Todo o = new Borrar_Todo(usuario);

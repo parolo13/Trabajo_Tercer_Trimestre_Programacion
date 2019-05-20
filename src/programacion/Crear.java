@@ -5,6 +5,9 @@ import java.sql.SQLException;
 
 import BBDD.Conexion;
 
+/**
+ * Aqui hacemos el select para la liga y la metemos en un array
+ */
 public class Crear {
 	public static String[] Liga() throws SQLException {
 		int i = 0;

@@ -15,7 +15,7 @@ public class sesion_no_iniciada extends JFrame {
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * JPanel para los que no tienen un usuario creado
 	 */
 	/**
 	 * Create the frame.
@@ -40,7 +40,7 @@ public class sesion_no_iniciada extends JFrame {
 				o.setVisible(true);
 			}
 		});
-		btnVerJugadores.setBounds(30, 36, 99, 23);
+		btnVerJugadores.setBounds(30, 36, 118, 42);
 		panel.add(btnVerJugadores);
 		
 		JButton btnVerLigas = new JButton("Ver ligas");
@@ -51,7 +51,7 @@ public class sesion_no_iniciada extends JFrame {
 				o.setVisible(true);
 			}
 		});
-		btnVerLigas.setBounds(252, 36, 99, 23);
+		btnVerLigas.setBounds(252, 36, 118, 42);
 		panel.add(btnVerLigas);
 		
 		JButton btnVerEquipos = new JButton("Ver equipos");
@@ -62,7 +62,7 @@ public class sesion_no_iniciada extends JFrame {
 				o.setVisible(true);
 			}
 		});
-		btnVerEquipos.setBounds(30, 182, 99, 23);
+		btnVerEquipos.setBounds(30, 163, 118, 42);
 		panel.add(btnVerEquipos);
 		
 		JButton btnIniciarSesin = new JButton("Iniciar sesi\u00F3n");
@@ -73,7 +73,7 @@ public class sesion_no_iniciada extends JFrame {
 				o.setVisible(true);
 			}
 		});
-		btnIniciarSesin.setBounds(252, 182, 99, 23);
+		btnIniciarSesin.setBounds(252, 163, 118, 42);
 		panel.add(btnIniciarSesin);
 	}
 }
